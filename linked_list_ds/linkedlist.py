@@ -193,6 +193,32 @@ class LinkedList:
         self.length += 1
         
         return True
+    
+    def remove(self, index):
+        '''
+            Removes the node at the given index position
+            
+            Returns:
+                node(any): the removed node
+        '''
+        if not self.get_node(index):
+            return None
+        
+        # remove the head node
+        if index == 0:
+            return self.pop_first()
+        
+        # remove the tail node
+        if index == self.length - 1:
+            return self.pop()
+        
+        temp = self.get_node(index)
+        prev = self.get_node(index - 1)
+        
+        prev.next = temp.next
+        temp.next = None
+        self.length -= 1
+        return temp
             
     
     def print_list(self):

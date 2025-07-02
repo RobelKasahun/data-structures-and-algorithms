@@ -54,9 +54,21 @@ linkedlist.append(1)
 linkedlist.append(2)
 linkedlist.append(2)
 
+# test for insert
 linkedlist.insert(0, 99)
 linkedlist.insert(6, 199)
 linkedlist.insert(3, 299)
 linkedlist.insert(5, 1999)
+print()
+
+linkedlist.print_list()
+# test for remove
+linkedlist.remove(0)
+linkedlist.remove(0)
+linkedlist.remove(0)
+linkedlist.remove(2)
+linkedlist.remove(0)
+linkedlist.remove(3)
+linkedlist.remove(1)
 linkedlist.print_list()
 print(linkedlist.length)
