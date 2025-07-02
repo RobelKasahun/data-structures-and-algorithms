@@ -164,6 +164,35 @@ class LinkedList:
         temp.value = value
         
         return temp
+    
+    def insert(self, index, value):
+        '''
+            Inserts a node before the given index position
+            
+            Returns:
+                bool: True if the node inserted successfully, False otherwise
+        '''
+        if index < 0 or index > self.length:
+            return False
+        
+        # add at the beginning of the List
+        if index == 0:
+            return self.prepend(value)
+        
+        # Add at the end of the List
+        if index == self.length:
+            return self.append(value)
+        
+        node = Node(value)
+        # insert in the middle
+        temp = self.get_node(index)
+        prev = self.get_node(index - 1)
+        
+        node.next = temp
+        prev.next = node
+        self.length += 1
+        
+        return True
             
     
     def print_list(self):

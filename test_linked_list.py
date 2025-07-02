@@ -109,6 +109,24 @@ class TestLinkedList(unittest.TestCase):
         
         for index in range(self.linkedlist.length):
             self.assertEqual(self.linkedlist.get_node(index).value, index + 1)
+            
+    def test_insert(self):
+        for i in range(1, 6, 1):
+            self.linkedlist.append(i)
+            
+        self.linkedlist.insert(0, 1)
+        self.assertEqual(self.linkedlist.get_head().value, 1)
+        
+        self.linkedlist.insert(6, 111111)
+        self.assertEqual(self.linkedlist.get_tail().value, 111111)
+        
+        self.linkedlist.insert(1, 11)
+        self.assertEqual(self.linkedlist.get_node(1).value, 11)
+        
+        self.linkedlist.insert(4, 111)
+        self.assertEqual(self.linkedlist.get_node(4).value, 111)
+            
+        self.linkedlist.print_list()
         
 
 if __name__ == '__main__':
