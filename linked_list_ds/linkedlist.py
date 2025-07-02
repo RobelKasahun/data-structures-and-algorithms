@@ -61,7 +61,33 @@ class LinkedList:
         return self.tail
     
     def pop(self):
-        pass
+        removed_node = None
+        
+        # List is empty
+        if self.is_empty():
+            return None
+        
+        # only one node in the List
+        if self.length == 1:
+            removed_node = self.head
+            self.head = self.tail = None
+            self.length -= 1
+            
+            return removed_node
+        
+        # List has more than 1 node
+        temp = self.head
+        prev = self.head
+        
+        while temp.next:
+            prev = temp
+            temp = temp.next
+            
+        self.tail = prev
+        self.tail.next = None
+        self.length -= 1
+        
+        return temp
     
     def print_list(self):
         '''
@@ -69,7 +95,7 @@ class LinkedList:
         '''
         temp = self.head
         while temp:
-            if not temp.next:
+            if temp.next:
                 print(temp.value, end=' ----> ')
             else:
                 print(temp.value, end=' ----> None')
