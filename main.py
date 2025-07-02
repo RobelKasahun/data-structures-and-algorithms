@@ -61,6 +61,7 @@ linkedlist.insert(3, 299)
 linkedlist.insert(5, 1999)
 print()
 
+linkedlist.reverse()
 linkedlist.print_list()
 # test for remove
 linkedlist.remove(0)
@@ -70,5 +71,22 @@ linkedlist.remove(2)
 linkedlist.remove(0)
 linkedlist.remove(3)
 linkedlist.remove(1)
+
+# test for reverse
+linkedlist.reverse()
+linkedlist.reverse()
 linkedlist.print_list()
 print(linkedlist.length)
+print(linkedlist.get_head().value, linkedlist.get_tail().value)
+print()
+
+linkedlist = LinkedList()
+linkedlist.append(1)
+linkedlist.append(2)
+linkedlist.append(3)
+linkedlist.append(4)
+linkedlist.append(5)
+
+linkedlist.print_list()
+linkedlist.reverse()
+linkedlist.print_list()
