@@ -28,7 +28,7 @@ def find_middle_node(head):
         if fast.next:
             fast = fast.next
             
-            # middle node of the List
+    # middle node of the List
     return slow.value
 
 print(find_middle_node(linked_list.get_head()))
