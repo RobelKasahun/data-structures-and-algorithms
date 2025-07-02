@@ -133,6 +133,39 @@ class LinkedList:
         temp.next = None
         return temp
     
+    def get_node(self, index):
+        '''
+            Return the node stored at the given position
+            
+            Returns:
+                node(any): The node at the given position
+        '''
+        if index < 0 or index >= self.length:
+            return None
+        
+        temp = self.head
+        for _ in range(index):
+            temp = temp.next
+            
+        
+        return temp
+    
+    def set_node(self, index, value):
+        '''
+            Update the node at the given position
+            
+            Returns:
+                node(any): The updated node at the given position
+        '''
+        if index < 0 or index >= self.length:
+            return False
+        
+        temp = self.get_node(index)
+        temp.value = value
+        
+        return temp
+            
+    
     def print_list(self):
         '''
             Prints all nodes from the List

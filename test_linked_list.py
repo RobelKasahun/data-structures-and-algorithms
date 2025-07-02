@@ -60,7 +60,6 @@ class TestLinkedList(unittest.TestCase):
         self.assertEqual(self.linkedlist.get_head().value, 2)
         self.linkedlist.prepend(3)
         self.assertEqual(self.linkedlist.get_head().value, 3)
-        # self.linkedlist.print_list()
         
     def test_pop_first(self):
         self.linkedlist.append(1)
@@ -78,7 +77,38 @@ class TestLinkedList(unittest.TestCase):
         self.linkedlist.pop_first()
         self.assertEqual(self.linkedlist.get_head().value, 4)
         
-        self.linkedlist.print_list()
+    def test_set_node(self):
+        self.linkedlist.append(1)
+        self.linkedlist.append(2)
+        self.linkedlist.append(3)
+        self.linkedlist.append(4)
+        self.linkedlist.append(5)
+        
+        self.linkedlist.set_node(0, 1)
+        self.assertEqual(self.linkedlist.get_node(0).value, 1)
+        
+        self.linkedlist.set_node(1, 11)
+        self.assertEqual(self.linkedlist.get_node(1).value, 11)
+        
+        self.linkedlist.set_node(2, 111)
+        self.assertEqual(self.linkedlist.get_node(2).value, 111)
+        
+        self.linkedlist.set_node(3, 1111)
+        self.assertEqual(self.linkedlist.get_node(3).value, 1111)
+        
+        self.linkedlist.set_node(4, 11111)
+        self.assertEqual(self.linkedlist.get_node(4).value, 11111)
+        
+    
+    def test_get_node(self):
+        self.linkedlist.append(1)
+        self.linkedlist.append(2)
+        self.linkedlist.append(3)
+        self.linkedlist.append(4)
+        self.linkedlist.append(5)
+        
+        for index in range(self.linkedlist.length):
+            self.assertEqual(self.linkedlist.get_node(index).value, index + 1)
         
 
 if __name__ == '__main__':
