@@ -42,6 +42,27 @@ class LinkedList:
         
         return True
     
+    def get_head(self):
+        '''
+            Returns the head node of the List
+            
+            Returns:
+                node (any): The head node of the List
+        '''
+        return self.head
+    
+    def get_tail(self):
+        '''
+            Returns the tail node of the List
+            
+            Returns:
+                node (any): The tail node of the List
+        '''
+        return self.tail
+    
+    def pop(self):
+        pass
+    
     def print_list(self):
         '''
             Prints all nodes from the List
