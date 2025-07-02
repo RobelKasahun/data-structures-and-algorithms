@@ -26,6 +26,12 @@ linkedlist.pop()
 linkedlist.pop()
 linkedlist.pop()
 
+linkedlist.prepend(1)
+linkedlist.prepend(2)
+linkedlist.prepend(3)
+linkedlist.prepend(4)
+linkedlist.prepend(5)
+
 # test for print_list
 linkedlist.print_list()
 # test for length

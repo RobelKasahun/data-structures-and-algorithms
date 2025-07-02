@@ -52,6 +52,16 @@ class TestLinkedList(unittest.TestCase):
         
         print(self.linkedlist.length)
         
+    def test_prepend(self):
+        self.assertEqual(self.linkedlist.get_head(), None)
+        self.linkedlist.prepend(1)
+        self.assertEqual(self.linkedlist.get_head().value, 1)
+        self.linkedlist.prepend(2)
+        self.assertEqual(self.linkedlist.get_head().value, 2)
+        self.linkedlist.prepend(3)
+        self.assertEqual(self.linkedlist.get_head().value, 3)
+        self.linkedlist.print_list()
+        
 
 if __name__ == '__main__':
     unittest.main()

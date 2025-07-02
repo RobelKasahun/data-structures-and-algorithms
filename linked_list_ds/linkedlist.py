@@ -89,6 +89,27 @@ class LinkedList:
         
         return temp
     
+    def prepend(self, value):
+        '''
+            Add a node to the beginning or at the head of the List
+            
+            Returns:
+                bool: The given node has successfully been added to the beginning of the List
+        '''
+        node = Node(value)
+        
+        # The list is empty, thus add the node and head and tail points to it
+        if self.is_empty():
+            self.head = self.tail = node
+        else:
+            # There is at least one node in the List
+            node.next = self.head
+            self.head = node
+            
+        self.length += 1
+        
+        return True
+    
     def print_list(self):
         '''
             Prints all nodes from the List
