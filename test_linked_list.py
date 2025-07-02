@@ -60,6 +60,24 @@ class TestLinkedList(unittest.TestCase):
         self.assertEqual(self.linkedlist.get_head().value, 2)
         self.linkedlist.prepend(3)
         self.assertEqual(self.linkedlist.get_head().value, 3)
+        # self.linkedlist.print_list()
+        
+    def test_pop_first(self):
+        self.linkedlist.append(1)
+        self.linkedlist.append(2)
+        self.linkedlist.append(3)
+        self.linkedlist.append(4)
+        self.linkedlist.append(5)
+        
+        self.linkedlist.pop_first()
+        self.assertEqual(self.linkedlist.get_head().value, 2)
+        
+        self.linkedlist.pop_first()
+        self.assertEqual(self.linkedlist.get_head().value, 3)
+        
+        self.linkedlist.pop_first()
+        self.assertEqual(self.linkedlist.get_head().value, 4)
+        
         self.linkedlist.print_list()
         
 

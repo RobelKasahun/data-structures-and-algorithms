@@ -26,13 +26,20 @@ linkedlist.pop()
 linkedlist.pop()
 linkedlist.pop()
 
+# test for prepend()
 linkedlist.prepend(1)
 linkedlist.prepend(2)
 linkedlist.prepend(3)
 linkedlist.prepend(4)
 linkedlist.prepend(5)
 
+# test for pop_first()
+linkedlist.pop_first()
+linkedlist.pop_first()
+linkedlist.pop_first()
+print(f'current head: {linkedlist.get_head().value}')
+
 # test for print_list
-linkedlist.print_list()
+# linkedlist.print_list()
 # test for length
 print(linkedlist.length)

@@ -110,6 +110,29 @@ class LinkedList:
         
         return True
     
+    def pop_first(self):
+        '''
+            Remove the head node of the List
+            
+            Returns:
+                node(any): The removed node from the beginning of the List
+        '''
+        temp = None
+        if self.is_empty():
+            return None
+        
+        # List has one or more nodes
+        if self.length == 1:
+            temp = self.head
+            self.head = self.tail = None
+        else:
+            temp = self.head
+            self.head = self.head.next
+        
+        self.length -= 1
+        temp.next = None
+        return temp
+    
     def print_list(self):
         '''
             Prints all nodes from the List
