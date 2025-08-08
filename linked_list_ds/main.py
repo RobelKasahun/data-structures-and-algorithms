@@ -1,4 +1,4 @@
-from linked_list_ds.linkedlist import LinkedList
+from linkedlist import LinkedList
 
 linkedlist = LinkedList()
 
