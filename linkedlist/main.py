@@ -141,3 +141,16 @@ print(f'head of the Linked List: {linkedlist.head.value if linkedlist.head else 
 print(f'tail of the linked list: {linkedlist.tail.value if linkedlist.tail else None}')
 linkedlist.print_list()
 print(linkedlist.length)
+print()
+print()
+
+# get(index)
+for n in range(1, 11, 1):
+    linkedlist.append(n)
+
+for n in range(0, 11, 1):
+    print(linkedlist.get(n).value if linkedlist.get(n) else None)
+print(f'head of the Linked List: {linkedlist.head.value if linkedlist.head else None}')
+print(f'tail of the linked list: {linkedlist.tail.value if linkedlist.tail else None}')
+linkedlist.print_list()
+print(linkedlist.length)

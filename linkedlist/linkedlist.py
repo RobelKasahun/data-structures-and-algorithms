@@ -14,6 +14,7 @@ class LinkedList:
         
     def print_list(self):
         '''
+            - Print all the nodes of the Linked List
             - Worst case time complexity
                 - O(n)
                 
@@ -34,6 +35,7 @@ class LinkedList:
             
     def append(self, value):
         '''
+            - Add a node to the tail or end of the Linked List
             - Worst case time complexity
                 - O(1)
                 
@@ -63,6 +65,7 @@ class LinkedList:
     
     def pop(self):
         ''' 
+            - Remove the node at the tail or at the end of the Linked List
             - Worst case time complexity
                 - O(n)
 
@@ -108,6 +111,7 @@ class LinkedList:
     
     def prepend(self, value):
         '''
+            - Add a node to the beginning of the Linked List
             - Best case time complexity
                 - O(1)
         '''
@@ -129,6 +133,7 @@ class LinkedList:
     
     def pop_first(self):
         '''
+            - remove a node at the head of the Linked List
             - Time complexity
                 - O(1)
         '''
@@ -150,6 +155,22 @@ class LinkedList:
         temp.next = None
         
         self.length -= 1
+        return temp
+    
+    def get(self, index):
+        '''
+            - return the node at the given index
+            - Time complexity
+                - O(n)
+        '''
+        # index out of range
+        if index < 0 or index >= self.length:
+            return None
+        
+        temp = self.head
+        for _ in range(index):
+            temp = temp.next
+            
         return temp
         
     
