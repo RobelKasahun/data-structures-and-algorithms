@@ -154,3 +154,13 @@ print(f'head of the Linked List: {linkedlist.head.value if linkedlist.head else 
 print(f'tail of the linked list: {linkedlist.tail.value if linkedlist.tail else None}')
 linkedlist.print_list()
 print(linkedlist.length)
+print()
+print()
+
+
+# set_value(index, value)
+value = ''
+for n in range(linkedlist.length):
+    value += '1'
+    linkedlist.set_value(n,int(value))
+linkedlist.print_list()

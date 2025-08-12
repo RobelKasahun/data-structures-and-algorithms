@@ -172,6 +172,20 @@ class LinkedList:
             temp = temp.next
             
         return temp
+    
+    def set_value(self, index, value):
+        '''
+            - update the node at the specified index
+            - Time complexity
+                - O(n)
+        '''
+        node = self.get(index)
+        if node:
+            node.value = value
+            return True
+        return False
+        
+        
         
     
     
