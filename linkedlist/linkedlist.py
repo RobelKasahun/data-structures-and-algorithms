@@ -105,7 +105,12 @@ class LinkedList:
         # return the removed node
         return temp
     
+    
     def prepend(self, value):
+        '''
+            - Best case time complexity
+                - O(1)
+        '''
         node = self.Node(value)
         
         # empty list
@@ -121,7 +126,31 @@ class LinkedList:
         
         # a new node has been added to the beginning of the List 
         return True
+    
+    def pop_first(self):
+        '''
+            - Time complexity
+                - O(1)
+        '''
+        temp = None
+        # Linked List is empty
+        if not self.head and not self.tail:
+            return temp
+        
+        # List contains only one node
+        if self.length == 1:
+            temp = self.head = self.tail
+            self.head = self.tail = None
+        else:
+            # List contains more than one node
+            temp = self.head
+            self.head = self.head.next
             
+        # brake the link
+        temp.next = None
+        
+        self.length -= 1
+        return temp
         
     
     

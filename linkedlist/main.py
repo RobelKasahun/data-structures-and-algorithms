@@ -77,6 +77,7 @@ print()
 
 linkedlist = LinkedList()
 # add nodes
+# append(node)
 linkedlist.append(1)
 linkedlist.append(2)
 linkedlist.append(3)
@@ -91,6 +92,7 @@ print(linkedlist.length)
 print()
 
 # remove the last node of the Linked List
+# pop()
 linkedlist.pop()
 linkedlist.pop()
 linkedlist.pop()
@@ -108,6 +110,7 @@ print(f'tail of the linked list: {linkedlist.tail.value if linkedlist.tail else 
 print(linkedlist.length)
 print()
 
+# prepend(node)
 linkedlist.prepend(1)
 linkedlist.prepend(2)
 linkedlist.prepend(3)
@@ -118,3 +121,23 @@ for n in range(4, 11):
 print(f'head of the Linked List: {linkedlist.head.value if linkedlist.head else None}')
 print(f'tail of the linked list: {linkedlist.tail.value if linkedlist.tail else None}')
 linkedlist.print_list()
+print()
+print()
+
+# pop_first()
+linkedlist.pop_first()
+linkedlist.pop_first()
+linkedlist.pop_first()
+linkedlist.pop_first()
+result = linkedlist.pop_first()
+
+for n in range(1, 5):
+    linkedlist.pop_first()
+    
+linkedlist.pop_first()
+result = linkedlist.pop_first()
+print(f'result: {result}')
+print(f'head of the Linked List: {linkedlist.head.value if linkedlist.head else None}')
+print(f'tail of the linked list: {linkedlist.tail.value if linkedlist.tail else None}')
+linkedlist.print_list()
+print(linkedlist.length)
