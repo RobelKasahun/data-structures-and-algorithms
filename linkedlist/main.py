@@ -106,4 +106,15 @@ linkedlist.print_list()
 print(f'head of the Linked List: {linkedlist.head.value if linkedlist.head else None}')
 print(f'tail of the linked list: {linkedlist.tail.value if linkedlist.tail else None}')
 print(linkedlist.length)
+print()
 
+linkedlist.prepend(1)
+linkedlist.prepend(2)
+linkedlist.prepend(3)
+
+for n in range(4, 11):
+    linkedlist.prepend(n)
+    
+print(f'head of the Linked List: {linkedlist.head.value if linkedlist.head else None}')
+print(f'tail of the linked list: {linkedlist.tail.value if linkedlist.tail else None}')
+linkedlist.print_list()

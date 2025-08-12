@@ -104,6 +104,23 @@ class LinkedList:
         
         # return the removed node
         return temp
+    
+    def prepend(self, value):
+        node = self.Node(value)
+        
+        # empty list
+        if not self.head:
+            self.head = self.tail = node
+        else:
+            # add node to the front of the List
+            node.next = self.head
+            # make the new node head of the List
+            self.head = node
+            
+        self.length += 1
+        
+        # a new node has been added to the beginning of the List 
+        return True
             
         
     
