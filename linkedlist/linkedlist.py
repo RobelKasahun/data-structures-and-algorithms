@@ -214,7 +214,38 @@ class LinkedList:
         
         self.length += 1
         
+        # successfully added at the specified or given index in the Linked List
         return True
+    
+    def remove(self, index):
+        '''
+            - Remove a node at the given or specified index from the List
+            - Time complexity
+                - O(n)
+        '''
+        # index out of range
+        if index < 0 or index >= self.length:
+            return None
+        
+        # remove the node at the head of the List
+        if index == 0:
+            return self.pop_first()
+        
+        # remove the node at the tail of the List
+        if index == self.length - 1:
+            return self.pop()
+        
+        
+        # remove the node in the middle of the list
+        target_node = self.get(index)
+        prev_node = self.get(index - 1)
+        prev_node.next = target_node.next
+        
+        self.length -= 1
+        
+        target_node.next = None
+        
+        return target_node
         
         
         
