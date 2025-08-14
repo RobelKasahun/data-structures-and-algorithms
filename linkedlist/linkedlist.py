@@ -184,6 +184,37 @@ class LinkedList:
             node.value = value
             return True
         return False
+    
+    def insert(self, index, value):
+        '''
+            - Insert a new node before the given or specified index
+            - Time complexity
+                - O(n)
+        '''
+        # index out of range
+        if index < 0 or index > self.length:
+            return False
+        
+        # insert a new node at the beginning of the List
+        if index == 0:
+            return self.prepend(value)
+        
+        
+        # insert a new node at the end of the List
+        if index == self.length:
+            return self.append(value)
+        
+        # insert a new node in the middle of the List
+        node = self.Node(value)
+        
+        # previous node
+        prev_node = self.get(index - 1)
+        node.next = prev_node.next
+        prev_node.next = node
+        
+        self.length += 1
+        
+        return True
         
         
         

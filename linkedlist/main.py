@@ -164,3 +164,11 @@ for n in range(linkedlist.length):
     value += '1'
     linkedlist.set_value(n,int(value))
 linkedlist.print_list()
+print()
+print()
+
+linkedlist.insert(0, 99)
+linkedlist.insert(linkedlist.length, 99)
+linkedlist.insert((linkedlist.length // 2), 99)
+linkedlist.print_list()
+print(linkedlist.length)
