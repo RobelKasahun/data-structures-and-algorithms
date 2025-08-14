@@ -182,3 +182,22 @@ linkedlist.remove(5)
 linkedlist.remove(9)
 linkedlist.print_list()
 print(linkedlist.length)
+print()
+print()
+
+# reverse()
+linkedlist.reverse()
+linkedlist.print_list()
+print(linkedlist.length)
+print()
+print()
+
+linkedlist = LinkedList()
+for n in range(1, 6):
+    linkedlist.append(n)
+    
+linkedlist.print_list()
+
+# reverse
+linkedlist.reverse()
+linkedlist.print_list()

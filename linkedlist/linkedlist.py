@@ -237,8 +237,8 @@ class LinkedList:
         
         
         # remove the node in the middle of the list
-        target_node = self.get(index)
         prev_node = self.get(index - 1)
+        target_node = prev_node.next
         prev_node.next = target_node.next
         
         self.length -= 1
@@ -246,7 +246,24 @@ class LinkedList:
         target_node.next = None
         
         return target_node
+    
+    def reverse(self):
+        '''
+            - Reverse a Linked List
+        '''
+        # swap head and tail
+        temp = self.head
+        self.head = self.tail
+        self.tail = temp
         
+        before = None
+        
+        for _ in range(self.length):
+            after = temp.next
+            # flip the arrow
+            temp.next = before
+            before = temp
+            temp = after
         
         
     
