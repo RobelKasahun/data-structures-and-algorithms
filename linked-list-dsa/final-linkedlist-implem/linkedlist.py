@@ -12,6 +12,21 @@ class LinkedList(object):
         self.tail = None
         self.length = 0
         
+    def is_empty(self):
+        '''
+        Checks if the Linked List is empty or not.
+        
+        Args:
+            Does not take any arguments.
+            
+        Returns:
+            bool: True if the Linked List is empty. Otherwise, False.
+            
+        Time Complexity:
+            O(1) - Constant time.
+        '''
+        return not self.head and not self.tail
+        
     def get_head(self):
         '''
         Returns the head or first node of the Linked List
@@ -61,7 +76,7 @@ class LinkedList(object):
         node = Node(value)
         
         # empty Linked List
-        if not self.head and not self.tail:
+        if self.is_empty():
             self.head = self.tail = node
         else:
             # There is at least one node in the Linked List
@@ -92,7 +107,7 @@ class LinkedList(object):
         '''
         
         # empty Linked List
-        if not self.head and not self.tail:
+        if self.is_empty():
             return None
         
         # index out of range
@@ -156,7 +171,7 @@ class LinkedList(object):
         
         temp = self.head
         # empty Linked List
-        if not self.head and not self.tail:
+        if self.is_empty():
             return None
         
         # only one node in the Linked List
@@ -203,7 +218,7 @@ class LinkedList(object):
         node = Node(value)
         
         # empty Linked List
-        if not self.head and not self.tail:
+        if self.is_empty():
             self.head = self.tail = node
         else:
             # There is at least one node in the Linked List
@@ -270,7 +285,7 @@ class LinkedList(object):
         '''
         
         # Empty Linked List
-        if not self.head and not self.tail:
+        if self.is_empty():
             print(f'*** Empty Linked List ***')
         
         # point to the head of the Linked List
