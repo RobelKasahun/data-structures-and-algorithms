@@ -78,8 +78,21 @@ print(f'pop_first_result: {pop_first_result.value if pop_first_result else 'None
 
 pop_first_result = linked_list.pop_first()
 print(f'pop_first_result: {pop_first_result.value if pop_first_result else 'None'}')
-
 print()
+
+for n in range(1, 6, 1):
+    linked_list.append(n)
+
+# *** get_node(index) *** #
+for n in range(6):
+    print(linked_list.get_node(n).value if linked_list.get_node(n) else None)
+print()
+
+# *** set_node(index, value) *** #
+value = '1'
+for n in range(5):
+    linked_list.set_node(n, int(value))
+    value += '1'
 
 # head and tail
 print(f'head node ----> {linked_list.get_head()}')

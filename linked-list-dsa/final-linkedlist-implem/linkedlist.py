@@ -91,6 +91,10 @@ class LinkedList(object):
             O(n) - ( Linear time ) pointer must be moved to the node stored at index.
         '''
         
+        # empty Linked List
+        if not self.head and not self.tail:
+            return None
+        
         # index out of range
         if index < 0 or index >= self.length:
             return None
@@ -115,20 +119,24 @@ class LinkedList(object):
             value (any): A new value to be used to update the node at the given index in the Linked List.
             
         Returns:
-            node (any): The updated at the given index
+            bool (any): The node at the given index has been updated.
             
         Time Complexity:
-            O(n) - Linear time
+            O(n) - Linear time.
         '''
         
+        # get the node at the given index
+        temp = self.get_node(index)
+        
         # index out of range
-        if not self.get_node(index):
-            return None
+        if not temp:
+            return False
         
-        node = self.get_node(index)
-        node.value = value
+        # update the node at the given index
+        temp.value = value
         
-        return node
+        # return the updated node
+        return True
     
     
     def pop(self):
@@ -222,7 +230,7 @@ class LinkedList(object):
             O(1) - Constant time
         '''
         
-        temp = None
+        temp = self.head
         
         # empty Linked List
         if not self.head or not self.tail:
@@ -230,13 +238,11 @@ class LinkedList(object):
         
         # only one node in the Linked List
         if self.length == 1:
-            temp = self.head
             self.head = self.tail = None
             self.length -= 1
             return temp
         
         # There are two or more nodes in the Linked List
-        temp = self.head
         # make the next node as the head of the Linked List
         self.head = self.head.next
         # decrease the nodes count 
