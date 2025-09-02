@@ -72,3 +72,84 @@ dict2['value'] = 100001
 
 print(dict1, dict2)
 print(id(dict1), id(dict2))
+print()
+
+
+'''
+    - Classes
+        - Class is a user defined data type
+'''
+class Cookie:
+    def __init__(self, color):
+        self._color = color
+        
+    @property
+    def color(self):
+        print(''' *** Getter *** ''')
+        return self._color
+    
+    @color.setter
+    def color(self, color):
+        print(''' *** Setter *** ''')
+        self._color = color
+        
+cookie1 = Cookie('Red')
+cookie2 = Cookie('Green')
+cookie3 = Cookie('Blue')
+
+cookie1.color = 'Blue'
+print(cookie1.color)
+print()
+
+cookie2.color = 'Green'
+print(cookie2.color)
+print()
+
+cookie3.color = 'Red'
+print(cookie3.color)
+print()
+
+'''
+    - Pointers
+'''
+n1 = 11
+n2 = n1
+
+print(n1, n2)
+print(id(n1), id(n2))
+print()
+
+n2 = 22
+
+print(n1, n2)
+print(id(n1), id(n2))
+print()
+
+d1 = {'value': 11}
+d2 = d1
+
+print(d1)
+print(d2)
+print(id(d1), id(d2))
+print()
+
+d2['value'] = 101
+
+print(d1)
+print(d2)
+print()
+
+d3 = {'value': 33}
+
+d2 = d3
+
+print(d1)
+print(d2)
+print(d3)
+print()
+
+d1 = d3
+print(d1)
+print(d2)
+print(d3)
+
