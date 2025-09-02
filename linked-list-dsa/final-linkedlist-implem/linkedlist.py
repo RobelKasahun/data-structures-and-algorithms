@@ -54,7 +54,7 @@ class LinkedList(object):
             bool: True the value has been added successfully to the end of the Linked List.
             
         Time Complexity:
-            O(1) - appending a new node to the end of the Linked List done in constant time.
+            O(1) - ( Constant time ) appending a new node to the end of the Linked List done in constant time.
         '''
         
         # New node that will be added to the end of the Linked List
@@ -88,7 +88,7 @@ class LinkedList(object):
             node (any): The node stored at the given index in the Linked List.
             
         Time Complexity:
-            O(n) - pointer must be moved to the node stored at index.
+            O(n) - ( Linear time ) pointer must be moved to the node stored at index.
         '''
         
         # index out of range
@@ -116,6 +116,9 @@ class LinkedList(object):
             
         Returns:
             node (any): The updated at the given index
+            
+        Time Complexity:
+            O(n) - Linear time
         '''
         
         # index out of range
@@ -168,11 +171,82 @@ class LinkedList(object):
         self.tail = prev
         # Its next pointer must point to None since it is the end of tail of the Linked List
         self.tail.next = None
-        # decrease the Linked List node counts
+        # decrease the Linked List nodes count
         self.length -= 1
         # return the removed node
         return temp
+    
+    
+    def prepend(self, value):
+        '''
+        Adds a new node to the beginning of the Linked List
+        
+        Args:
+            value (any): The value to be added to the beginning or head of the Linked List
             
+        Returns:
+            bool: Return true when a new node added to the beginning of the Linked List
+            
+        Time Complexity:
+            O(1) - Constant time
+        '''
+        
+        # The node to be added to the beginning of the Linked List
+        node = Node(value)
+        
+        # empty Linked List
+        if not self.head and not self.tail:
+            self.head = self.tail = node
+        else:
+            # There is at least one node in the Linked List
+            node.next = self.head
+            self.head = node
+        
+        # increase the nodes count
+        self.length += 1
+        
+        return True
+    
+    
+    def pop_first(self):
+        '''
+        Removes the head or node at the beginning of the Linked List
+        
+        Args:
+            Does not take arguments
+            
+        Returns:
+            node (any): The removed or head of the Linked List
+            
+        Time Complexity:
+            O(1) - Constant time
+        '''
+        
+        temp = None
+        
+        # empty Linked List
+        if not self.head or not self.tail:
+            return None
+        
+        # only one node in the Linked List
+        if self.length == 1:
+            temp = self.head
+            self.head = self.tail = None
+            self.length -= 1
+            return temp
+        
+        # There are two or more nodes in the Linked List
+        temp = self.head
+        # make the next node as the head of the Linked List
+        self.head = self.head.next
+        # decrease the nodes count 
+        self.length -= 1
+        # head of the node must point to None to break the link
+        temp.next = None
+        
+        # return the removed head node
+        return temp
+        
         
     def print_list(self):
         '''
@@ -181,7 +255,17 @@ class LinkedList(object):
         Args:
             This function does not take any arguments
             and does not return a value    
+            
+        Returns:
+            This function does not return a value
+            
+        Time Complexity:
+            O(n) - Linear time
         '''
+        
+        # Empty Linked List
+        if not self.head and not self.tail:
+            print(f'*** Empty Linked List ***')
         
         # point to the head of the Linked List
         temp = self.head
