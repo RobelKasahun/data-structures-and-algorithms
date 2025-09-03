@@ -202,16 +202,16 @@ class LinkedList(object):
     
     def prepend(self, value):
         '''
-        Adds a new node to the beginning of the Linked List
+        Adds a new node to the beginning of the Linked List.
         
         Args:
-            value (any): The value to be added to the beginning or head of the Linked List
+            value (any): The value to be added to the beginning or head of the Linked List.
             
         Returns:
-            bool: Return true when a new node added to the beginning of the Linked List
+            bool: Return true when a new node added to the beginning of the Linked List.
             
         Time Complexity:
-            O(1) - Constant time
+            O(1) - Constant time.
         '''
         
         # The node to be added to the beginning of the Linked List
@@ -233,16 +233,16 @@ class LinkedList(object):
     
     def pop_first(self):
         '''
-        Removes the head or node at the beginning of the Linked List
+        Removes the head or node at the beginning of the Linked List.
         
         Args:
             Does not take arguments
             
         Returns:
-            node (any): The removed or head of the Linked List
+            node (any): The removed or head of the Linked List.
             
         Time Complexity:
-            O(1) - Constant time
+            O(1) - Constant time.
         '''
         
         temp = self.head
@@ -271,14 +271,18 @@ class LinkedList(object):
     
     def insert(self, index, value):
         '''
-        Inserts a new node into the Linked List before the given index
+        Inserts a new node into the Linked List before the given index.
         
         Args:
-            index (int): The index where the new node will be stored
-            value: (any): New node that will be inserted at the given index
+            index (int): The index where the new node will be stored.
+            value: (any): New node that will be inserted at the given index.
             
         Returns:
-            Returns true to indicate the new node has been inserted at the given index
+            Returns true to indicate the new node has been inserted at the given index.
+            
+        Time complexity:
+            O(1) - Constant time inserting on both ends of the Linked List.
+            O(n) - Linear time: inserting in the middle of the Linked List.
         '''
         
         # index out of range
@@ -304,6 +308,59 @@ class LinkedList(object):
         self.length += 1
         
         return True
+    
+    
+    def remove(self, index):
+        '''
+        Removes a node at the specified or given index.
+        
+        Args:
+            index (int): The position of the node that is going to be deleted or removed from the Linked List.
+            
+        Returns:
+            node (any): returns the removed node.
+            
+        Time Complexity:
+            O(1) - Constant time on removing the first node
+            O(n) - Linkear time on removing the tail node
+            O(n) - Linear time on removing a node somewhere from the middle
+            Overall time complexity
+                - O(1) + O(n) + (n)
+                - O(1) + O(2n)
+                - O(1) + O(n)
+                - O(n)
+        '''
+        
+        # empty Linked List
+        if self.is_empty():
+            return None
+        
+        # get the node at index
+        temp = self.get_node(index)
+        
+        if not temp:
+            # index out of range
+            return None
+        
+        # remove the first node
+        if index == 0:
+            return self.pop_first()
+        
+        # remove the tail node or last node
+        if index == self.length - 1:
+            return self.pop()
+        
+        # remove a node somewhere in the middle
+        
+        prev = self.get_node(index - 1)
+        prev.next = temp.next
+        
+        temp.next = None
+        
+        self.length -= 1
+        
+        return temp
+        
         
         
     def print_list(self):

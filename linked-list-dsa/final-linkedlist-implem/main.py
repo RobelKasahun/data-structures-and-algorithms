@@ -104,6 +104,21 @@ print()
 
 
 # *** remove(index) *** #
+remove_result = linked_list.remove(0)
+print(f'remove_result = {remove_result.value}')
+
+remove_result = linked_list.remove(linked_list.length)
+print(f'remove_result = {remove_result}')
+
+remove_result = linked_list.remove(2)
+print(f'remove_result = {remove_result.value}')
+
+remove_result = linked_list.remove(4)
+print(f'remove_result = {remove_result.value}')
+
+remove_result = linked_list.remove(linked_list.length - 1)
+print(f'remove_result = {remove_result.value}')
+print()
 
 # head and tail
 print(f'head node ----> {linked_list.get_head()}')
