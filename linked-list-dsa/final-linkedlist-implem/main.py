@@ -93,6 +93,17 @@ value = '1'
 for n in range(5):
     linked_list.set_node(n, int(value))
     value += '1'
+print()
+
+# *** insert(index, value) *** #
+linked_list.insert(2, 2)
+linked_list.insert(0, 0)
+linked_list.insert(linked_list.length, 101)
+linked_list.insert(6, 101)
+print()
+
+
+# *** remove(index) *** #
 
 # head and tail
 print(f'head node ----> {linked_list.get_head()}')

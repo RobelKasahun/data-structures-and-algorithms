@@ -267,6 +267,43 @@ class LinkedList(object):
         
         # return the removed head node
         return temp
+    
+    
+    def insert(self, index, value):
+        '''
+        Inserts a new node into the Linked List before the given index
+        
+        Args:
+            index (int): The index where the new node will be stored
+            value: (any): New node that will be inserted at the given index
+            
+        Returns:
+            Returns true to indicate the new node has been inserted at the given index
+        '''
+        
+        # index out of range
+        if index < 0 or index > self.length:
+            return False
+        
+        # insert at the beginning of the Linked List
+        if index == 0:
+            return self.prepend(value)
+        
+        # Insert at the end of the Linked List        
+        if index == self.length:
+            return self.append(value)
+
+        # Insert somewhere in the middle of the Linked List
+        node = Node(value)
+        prev = self.get_node(index - 1)
+        temp = prev.next
+        
+        node.next = temp
+        prev.next = node
+        
+        self.length += 1
+        
+        return True
         
         
     def print_list(self):
