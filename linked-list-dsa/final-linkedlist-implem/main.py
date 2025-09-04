@@ -83,9 +83,9 @@ print()
 for n in range(1, 6, 1):
     linked_list.append(n)
 
-# *** get_node(index) *** #
+# *** get(index) *** #
 for n in range(6):
-    print(linked_list.get_node(n).value if linked_list.get_node(n) else None)
+    print(linked_list.get(n).value if linked_list.get(n) else None)
 print()
 
 # *** set_node(index, value) *** #
@@ -118,7 +118,19 @@ print(f'remove_result = {remove_result.value}')
 
 remove_result = linked_list.remove(linked_list.length - 1)
 print(f'remove_result = {remove_result.value}')
+linked_list.print_list()
 print()
+
+# *** reverse() *** #
+linked_list.reverse()
+linked_list.print_list()
+print()
+
+linked_list.reverse()
+print()
+
+linked_list.insert(5, 101)
+
 
 # head and tail
 print(f'head node ----> {linked_list.get_head()}')

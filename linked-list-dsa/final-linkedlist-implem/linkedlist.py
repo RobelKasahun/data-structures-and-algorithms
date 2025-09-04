@@ -92,7 +92,7 @@ class LinkedList(object):
         return True
     
     
-    def get_node(self, index):
+    def get(self, index):
         '''
         Return the node stored at the given index.
         
@@ -141,7 +141,7 @@ class LinkedList(object):
         '''
         
         # get the node at the given index
-        temp = self.get_node(index)
+        temp = self.get(index)
         
         # index out of range
         if not temp:
@@ -299,7 +299,7 @@ class LinkedList(object):
 
         # Insert somewhere in the middle of the Linked List
         node = Node(value)
-        prev = self.get_node(index - 1)
+        prev = self.get(index - 1)
         temp = prev.next
         
         node.next = temp
@@ -336,7 +336,7 @@ class LinkedList(object):
             return None
         
         # get the node at index
-        temp = self.get_node(index)
+        temp = self.get(index)
         
         if not temp:
             # index out of range
@@ -352,7 +352,7 @@ class LinkedList(object):
         
         # remove a node somewhere in the middle
         
-        prev = self.get_node(index - 1)
+        prev = self.get(index - 1)
         prev.next = temp.next
         
         temp.next = None
@@ -360,7 +360,44 @@ class LinkedList(object):
         self.length -= 1
         
         return temp
+    
+    
+    def reverse(self):
+        '''
+        Reverse a Linked List.
         
+        Args:
+            Does not take any arguments.
+            
+        Returns:
+            Does not return a value.
+            
+        Time Complexity:
+            O(n) - Linear time.
+        '''
+        
+        # empty Linked List
+        if self.is_empty():
+            print(f'Empty Linked List cannot be reversed.')
+            
+        # swap head and tail
+        temp = self.head
+        self.head = self.tail
+        self.tail = temp
+        
+        # set before and after to None
+        after = None
+        before = None
+        
+        for _ in range(self.length):
+            # point after to node next temp
+            after = temp.next
+            # flip the pointer to before
+            temp.next = before
+            # move before to point to the node that temp is pointing
+            before = temp
+            # move temp to the node pointed by after
+            temp = after
         
         
     def print_list(self):
