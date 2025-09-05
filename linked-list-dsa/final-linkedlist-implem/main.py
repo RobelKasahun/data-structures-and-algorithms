@@ -138,6 +138,11 @@ for n in range(1, 11, 1):
     
 mid_node = linked_list.find_mid_node()
 print(f'mid_node: {mid_node.value}')
+print()
+
+for i in range(1, 12, 1):
+    kth_node = linked_list.find_kth_node(i)
+    print(f'kth_node: at {i}th ---> {kth_node.value if kth_node else None}')
 
 
 # head and tail

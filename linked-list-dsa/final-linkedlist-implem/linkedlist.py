@@ -464,6 +464,43 @@ class LinkedList(object):
         # return True if the Linked List has a loop
         # False if the Linked List does not have a loop
         return is_loop
+    
+    def find_kth_node(self, k):
+        # Solution using length
+        # index out of range
+        # if k < 0 or k > self.length:
+        #     return None
+        # if k == 1:
+        #     return self.tail
+        
+        # if k == self.length:
+        #     return self.head
+        
+        # kth_node = self.head
+        
+        # for _ in range(self.length - k):
+        #     kth_node = kth_node.next
+            
+        
+        # return kth_node
+        
+        # Solution without using length
+        slow = self.head
+        fast = self.head
+        
+        # move fast to k position
+        for _ in range(k):
+            if not fast:
+                return None
+            fast = fast.next
+            
+        # move slow as long as fast is not None
+        while fast:
+            slow = slow.next
+            fast = fast.next
+            
+        # the kth node
+        return slow
                 
         
         
