@@ -466,6 +466,20 @@ class LinkedList(object):
         return is_loop
     
     def find_kth_node(self, k):
+        '''
+        Find the kth node from the end of a Linked List.
+        
+        Args:
+            k (int): the index of a node to be found from the end of a Linked List.
+            
+        Returns:
+            node (any): kth node from the end of a Linked List.
+            
+        Time Complexity:
+            - O(n) + O(n)
+            - O(2n)
+            - O(n) - Linear time.
+        '''
         # Solution using length
         # index out of range
         # if k < 0 or k > self.length:
