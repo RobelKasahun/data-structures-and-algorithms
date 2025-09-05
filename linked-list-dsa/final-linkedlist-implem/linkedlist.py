@@ -398,6 +398,35 @@ class LinkedList(object):
             before = temp
             # move temp to the node pointed by after
             temp = after
+            
+    def find_mid_node(self):
+        '''
+        Find the middle node of a Linked List.
+        
+        Args:
+            Does not take any arguments.
+            
+        Returns:
+            node (any): the middle node.
+            
+        Time Complexity:
+            O(n) - Linear time.
+        '''
+        # initialize fast and slow to the head of the Linked List
+        fast = self.head
+        slow = self.head
+        
+        # increment slow by one node and fast by two nodes
+        # as long as the fast is not None
+        while fast:
+            if not fast.next:
+                break
+            fast = fast.next.next
+            slow = slow.next
+    
+        # middle node
+        return slow
+                
         
         
     def print_list(self):

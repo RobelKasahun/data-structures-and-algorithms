@@ -130,6 +130,14 @@ linked_list.reverse()
 print()
 
 linked_list.insert(5, 101)
+print()
+
+linked_list = LinkedList()
+for n in range(1, 11, 1):
+    linked_list.append(n)
+    
+mid_node = linked_list.find_mid_node()
+print(f'mid_node: {mid_node.value}')
 
 
 # head and tail
