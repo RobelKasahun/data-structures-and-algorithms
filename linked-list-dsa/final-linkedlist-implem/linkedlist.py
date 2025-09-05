@@ -426,6 +426,44 @@ class LinkedList(object):
     
         # middle node
         return slow
+    
+    def has_loop(self):
+        '''
+        Check if a Linked List has a loop.
+        
+        Args:
+            Does not take any arguments.
+            
+        Returns:
+            bool: True if the Linked List has a loop. Otherwise, False.
+            
+        Time Complexity:
+            O(n) - Linear time.
+        '''
+        # set slow and fast to the head of the Linked List
+        slow = self.head
+        fast = self.head
+        
+        is_loop = False
+        
+        # iterate through the Linked List as long as fast is not None
+        while fast:
+            # move slow one step at a time
+            slow = slow.next
+            # move fast two steps at a time
+            fast = fast.next.next
+            
+            # End of Linked List
+            if not fast or not fast.next:
+                break
+            
+            # determine if fast and slow pointing to the same node
+            if fast.value == slow.value:
+                is_loop = True
+                break
+        # return True if the Linked List has a loop
+        # False if the Linked List does not have a loop
+        return is_loop
                 
         
         
