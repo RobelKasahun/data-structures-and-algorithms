@@ -153,15 +153,29 @@ linked_list.append(1)
 linked_list.insert(5, 1)
 linked_list.insert(8, 1)
 
-linked_list.remove_duplicate()
+linked_list.remove_duplicates()
+print()
+print()
 
+linked_list = LinkedList()
+for n in range(1, 11, 1):
+    linked_list.append(1)
 
+# *** print_list *** #
+linked_list.print_list()
+print()
+
+# *** remove_duplicates() *** #
+linked_list.remove_duplicates()
+
+linked_list.print_list()
+
+print()
 # head and tail
 print(f'head node ----> {linked_list.get_head()}')
 print(f'tail node ----> {linked_list.get_tail()}')
 
-# *** print_list *** #
-linked_list.print_list()
+print()
 
 # *** length *** #
 print(f'length: {linked_list.length}')

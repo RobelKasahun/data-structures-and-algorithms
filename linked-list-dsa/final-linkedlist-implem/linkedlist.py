@@ -516,21 +516,74 @@ class LinkedList(object):
         # the kth node
         return slow
     
-    def remove_duplicate(self):
-       current = self.head
+    def remove_duplicates(self):
+       '''
+       Removes duplicate nodes
        
-       while current:
-           runner = current
-           while runner and runner.next:
-            # duplicate value found
-            # remove the duplicate value
-               if runner.next.value == current.value:
-                   runner.next = runner.next.next
+       Args:
+           Does not take any arguments
+           
+       Returns:
+           Does not return any value
+           
+       Time Complexity:
+           O(n^2) - Quadratic time
+       ''' 
+    #    current = self.head
+    #    while current:
+    #        runner = current
+    #        while runner and runner.next:
+    #         # duplicate value found
+    #         # remove the duplicate value
+    #            if runner.next.value == current.value:
+    #                runner.next = runner.next.next
+    #            else:
+    #                runner = runner.next
+    #        current = current.next
+           
+       ''' 
+       Remove duplicate nodes.
+       
+       Args:
+           Does not take any arguments.
+           
+       Returns:
+           Does not return a value.
+            
+        Time Complexity:
+            O(n) - Linear time.
+       '''
+       values = []
+       if self.head and self.tail:
+           # prev points always to the node before the current pointer
+           prev = self.head
+           # current points to the node next to the previous node     
+           current = self.head.next    
+           # initiate the values list by adding the head node
+           values.append(prev.value)
+           # Iterate or loop through the as long as current is not None
+           while current:
+               # check if the current's value in the values list
+               # if the value present in the list
+               # remove the node currently pointed at by the current
+               # move the current pointer to the next node
+               # continue iterating
+               if current.value in values:
+                   prev.next = current.next
+                   self.length -= 1
+                   current = current.next
+                   continue
                else:
-                   runner = runner.next
-           current = current.next
-            
-            
+                   # if the value pointed at by the current is not present
+                   # in the list, add it
+                   values.append(current.value)
+               # prev always points to the current node
+               prev = current
+               # and current always points to the node next to the prev pointer
+               current = current.next
+       else:
+           # Linked List is empty
+           print(f'Empty Linked List.')
         
             
         
