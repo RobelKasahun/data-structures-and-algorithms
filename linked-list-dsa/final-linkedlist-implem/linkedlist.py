@@ -515,6 +515,26 @@ class LinkedList(object):
             
         # the kth node
         return slow
+    
+    def remove_duplicate(self):
+       current = self.head
+       
+       while current:
+           runner = current
+           while runner and runner.next:
+            # duplicate value found
+            # remove the duplicate value
+               if runner.next.value == current.value:
+                   runner.next = runner.next.next
+               else:
+                   runner = runner.next
+           current = current.next
+            
+            
+        
+            
+        
+        
                 
         
         

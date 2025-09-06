@@ -143,6 +143,17 @@ print()
 for i in range(1, 12, 1):
     kth_node = linked_list.find_kth_node(i)
     print(f'kth_node: at {i}th ---> {kth_node.value if kth_node else None}')
+print()
+
+linked_list.append(1)
+linked_list.append(1)
+linked_list.append(1)
+linked_list.append(1)
+linked_list.append(1)
+linked_list.insert(5, 1)
+linked_list.insert(8, 1)
+
+linked_list.remove_duplicate()
 
 
 # head and tail
