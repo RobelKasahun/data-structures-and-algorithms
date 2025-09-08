@@ -169,6 +169,29 @@ print()
 linked_list.remove_duplicates()
 
 linked_list.print_list()
+print()
+print()
+
+# *** convert_binary_to_decimal() *** #
+linked_list = LinkedList()
+linked_list.append(1)
+linked_list.append(1)
+linked_list.append(1)
+linked_list.append(1)
+linked_list.append(1)
+linked_list.append(1)
+linked_list.append(1)
+linked_list.append(0)
+linked_list.append(0)
+    
+decimal_value = linked_list.convert_binary_to_decimal()
+print(f'decimal_value: {decimal_value}')
+
+
+linked_list.print_list()
+
+
+
 
 print()
 # head and tail

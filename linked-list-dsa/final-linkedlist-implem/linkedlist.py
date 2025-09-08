@@ -584,6 +584,29 @@ class LinkedList(object):
        else:
            # Linked List is empty
            print(f'Empty Linked List.')
+           
+    
+    def convert_binary_to_decimal(self):
+        '''
+        Converts binary to decimal
+        
+        Args:
+            Does not take any arguments
+            
+        Returns:
+            int: returns an decimall value converted from binary
+            
+        Time Complexity:
+            O(n) - Linear time
+        '''
+        decimal_value = 0
+        current = self.head
+        limit = self.length
+        for n in range(limit - 1, -1, -1):
+            decimal_value += current.value * pow(2, n)
+            current = current.next
+        
+        return decimal_value
         
             
         
