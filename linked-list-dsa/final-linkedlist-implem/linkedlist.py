@@ -599,20 +599,76 @@ class LinkedList(object):
         Time Complexity:
             O(n) - Linear time
         '''
-        decimal_value = 0
+        # value = 0
+        # current = self.head
+        # limit = self.length
+        # for n in range(limit - 1, -1, -1):
+        #     value += current.value * pow(2, n)
+        #     current = current.next
+        
+        # return value
+        
+        # values = []
+        
+        # current = self.head
+        # power = 0
+        # # Time complexity - O(n)
+        # while current:
+        #     values.append(power)
+        #     current = current.next
+        #     power += 1
+            
+        # # Time complexity - O(n)
+        # current = self.head
+        # value = 0
+        # for index in range(len(values) - 1, -1, -1):
+        #     value += (current.value) * pow(2, index)
+        #     current = current.next
+        
+        # # The time complexity of this algorithm is O(n)
+        # return value
+        
+        value = 0
         current = self.head
-        limit = self.length
-        for n in range(limit - 1, -1, -1):
-            decimal_value += current.value * pow(2, n)
+        while current:
+            value = value * 2 + current.value
             current = current.next
         
-        return decimal_value
+        return value
+    
+    def partition_list(self, x):
+        prev1 = Node(0)
+        temp_node1 = Node(0)
+        prev1.next = temp_node1
         
+        prev2 = Node(0)
+        temp_node2 = Node(0)
+        prev2.next = temp_node2
+        
+        current = self.head
+        while current:
+            if current.value < x:
+                temp_node1.next = current
+                prev1.next = current
+            else:
+                temp_node2.next = current
+                prev2.next = current
+            current = current.next
+            
+        prev1.next = temp_node2.next
+            
+        self.head = temp_node1.next
+        
+        current = self.head
+        
+        while current:
+            print(current.value, end=' ')
+            current = current.next
+        print()
+            
             
         
-        
-                
-        
+
         
     def print_list(self):
         '''

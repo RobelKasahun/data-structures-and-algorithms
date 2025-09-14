@@ -174,21 +174,25 @@ print()
 
 # *** convert_binary_to_decimal() *** #
 linked_list = LinkedList()
+linked_list.append(3)
+linked_list.append(8)
+linked_list.append(5)
+linked_list.append(10)
+linked_list.append(2)
 linked_list.append(1)
-linked_list.append(1)
-linked_list.append(1)
-linked_list.append(1)
-linked_list.append(1)
-linked_list.append(1)
-linked_list.append(1)
-linked_list.append(0)
-linked_list.append(0)
+# linked_list.append(1)
+# linked_list.append(0)
+# linked_list.append(0)
     
 decimal_value = linked_list.convert_binary_to_decimal()
 print(f'decimal_value: {decimal_value}')
 
 
 linked_list.print_list()
+print()
+print()
+
+linked_list.partition_list(5)
 
 
 
