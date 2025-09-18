@@ -637,34 +637,32 @@ class LinkedList(object):
         return value
     
     def partition_list(self, x):
-        prev1 = Node(0)
-        temp_node1 = Node(0)
-        prev1.next = temp_node1
+        dummy_node1 = Node(0)
+        dummy_node2 = Node(0)
         
-        prev2 = Node(0)
-        temp_node2 = Node(0)
-        prev2.next = temp_node2
+        prev1, prev2 = dummy_node1, dummy_node2
         
         current = self.head
+        
         while current:
             if current.value < x:
-                temp_node1.next = current
                 prev1.next = current
+                prev1 = current
             else:
-                temp_node2.next = current
                 prev2.next = current
+                prev2 = current
             current = current.next
             
-        prev1.next = temp_node2.next
-            
-        self.head = temp_node1.next
+        prev1.next = dummy_node2.next
+        prev2.next = None
+        
+        self.head = dummy_node1.next
         
         current = self.head
         
         while current:
-            print(current.value, end=' ')
+            print(current.value, end=' --- ')
             current = current.next
-        print()
             
             
         
