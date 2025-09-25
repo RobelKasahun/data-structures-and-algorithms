@@ -695,6 +695,49 @@ class LinkedList(object):
         print()
             
             
+    def reverse_between(self, start_index, end_index):
+        '''
+            - Time Complexity of reverse_between()
+                - O(n) + O(m)
+        '''
+        # no need to reverse when the Linked List is empty and
+        # and has only one node
+        if self.length <= 1:
+            return None
+        
+        # dummy node if in case we need to reverse from the head node
+        dummy = Node(0)
+        dummy.next = self.head
+        prev = dummy
+        
+        # move the prev pointer to point to a node before the target starting node
+        '''
+            - Time Complexity
+                - n = start_index
+                - O(n)
+        '''
+        for _ in range(start_index):
+            prev = prev.next
+            
+        # the starting node from which we start reversing
+        current = prev.next
+        
+        '''
+            - Time Complexity
+                - m = end_index - start_index
+                - O(m)
+        '''
+        for _ in range(end_index - start_index):
+            move = current.next
+            current.next = move.next
+            move.next = prev.next
+            prev.next = move
+            
+        self.head = dummy.next
+            
+        
+        
+            
         
 
         

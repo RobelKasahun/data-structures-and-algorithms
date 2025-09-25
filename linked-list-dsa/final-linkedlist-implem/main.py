@@ -193,6 +193,17 @@ print()
 print()
 
 linked_list.partition_list(5)
+print()
+
+
+linked_list = LinkedList()
+for i in range(1, 6, 1):
+    linked_list.append(i)
+
+linked_list.print_list()
+
+linked_list.reverse_between(2, 4)
+linked_list.print_list()
 
 
 
